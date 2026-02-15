@@ -1,0 +1,26 @@
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xcbkptlist
+*.xcworkspace/xcuserdata/
+
+# Derived Data
+DerivedData/
+
+# Swift Package Manager
+.build/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Archives
+*.xcarchive
+
+# macOS
+.DS_Store
+
+# LLDB
+.lldbinit
