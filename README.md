@@ -3,6 +3,7 @@ Includes solution to top LeetCode problems in Swift
 | Leet code Problem  | Difficulty | Tests |
 | ------------- | ------------- | ------------- |
 | [658. Find K Closest Elements](https://github.com/kartikkotak/LeetCodeProblems-Swift/blob/main/LeetCodeProblems/LeetCodeProblems/Solutions/KClosestValues.swift) | Medium | [Yes](https://github.com/kartikkotak/LeetCodeProblems-Swift/blob/main/LeetCodeProblems/LeetCodeProblemsTests/KClosestValuesTest.swift)
+| [1. Two Sum](https://github.com/kartikkotak/LeetCodeProblems-Swift/blob/main/LeetCodeProblems/LeetCodeProblems/Solutions/1-TwoSum.swift) | Medium | [Yes](https://github.com/kartikkotak/LeetCodeProblems-Swift/blob/main/LeetCodeProblems/LeetCodeProblemsTests/TwoSumTests.swift)
 
 
 > Will continue adding more leet code solutions
