@@ -6,7 +6,7 @@ on:
       - main # Change this if your default branch is 'master'
     # This ensures the action only burns minutes when relevant files change
     paths:
-      - 'Solutions/**/*.swift'
+      - 'LeetCodeProblems/LeetCodeProblems/Solutions/**/*.swift'
 
 permissions:
   contents: write
