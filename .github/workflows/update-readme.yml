@@ -1,14 +1,13 @@
-name: Update README with File Links
+name: Update README with Swift Solutions
 
 on:
   push:
     branches:
       - main # Change this if your default branch is 'master'
-    # Optional: Only run if files are added/changed in a specific folder
-    # paths:
-    #   - 'my_folder/**'
+    # This ensures the action only burns minutes when relevant files change
+    paths:
+      - 'Solutions/**/*.swift'
 
-# Grants the action permission to push commits back to the repo
 permissions:
   contents: write
 
@@ -25,34 +24,33 @@ jobs:
           import os, urllib.parse, re
 
           # --- CONFIGURATION ---
-          # Change '.' to a specific folder name if you only want to scan one directory (e.g., 'scripts')
-          DIRECTORY = 'LeetCodeProblems/LeetCodeProblems/Solutions/*' 
+          DIRECTORY = 'Solutions' 
           README_PATH = 'README.md'
           START_MARKER = ''
           END_MARKER = ''
 
           links = []
-          for root, dirs, files in sorted(os.walk(DIRECTORY)):
-              # Skip hidden directories like .git or .github
-              dirs[:] = [d for d in dirs if not d.startswith('.')]
-              
-              for file in sorted(files):
-                  # Skip the README itself and any hidden files
-                  if file.lower() == 'readme.md' or file.startswith('.'): 
-                      continue
+          
+          # Ensure the directory exists to prevent script errors
+          if os.path.exists(DIRECTORY):
+              for root, dirs, files in sorted(os.walk(DIRECTORY)):
+                  # Skip hidden directories
+                  dirs[:] = [d for d in dirs if not d.startswith('.')]
+                  
+                  for file in sorted(files):
+                      # FILTER: Only process .swift files
+                      if not file.lower().endswith('.swift'): 
+                          continue
 
-                  filepath = os.path.join(root, file)
-                  
-                  # Clean up the path format for the link
-                  display_path = filepath.replace(DIRECTORY + '/', '', 1) if DIRECTORY != '.' else filepath[2:]
-                  
-                  # URL encode the path to handle spaces and special characters
-                  url_path = urllib.parse.quote(display_path)
-                  
-                  # Format: - [filename.ext](path/to/filename.ext)
-                  links.append(f'- [{file}]({url_path})')
+                      filepath = os.path.join(root, file)
+                      
+                      # URL encode the path to handle spaces
+                      url_path = urllib.parse.quote(filepath)
+                      
+                      # Format: - [filename.swift](Solutions/filename.swift)
+                      links.append(f'- [{file}]({url_path})')
 
-          links_text = '\n'.join(links)
+          links_text = '\n'.join(links) if links else '- No Swift solutions found yet.'
           replacement = f'{START_MARKER}\n{links_text}\n{END_MARKER}'
 
           # Read the current README
@@ -69,11 +67,10 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          # Set up git config for the bot
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
           git add README.md
           
           # Only commit and push if there are actual changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: auto-update README with file links" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: auto-update README with Swift solutions" && git push)
