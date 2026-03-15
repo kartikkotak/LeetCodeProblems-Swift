@@ -14,7 +14,8 @@ def get_repo_url() -> str:
     Try to detect the GitHub repository URL from environment variables.
     Fallback to empty string if not found.
     """
-    github_repository = os.getenv("GITHUB_REPOSITORY")  # owner/repo
+    # https://github.com/kartikkotak/LeetCodeProblems-Swift/blob/main/LeetCodeProblems/LeetCodeProblems/Solutions/
+    github_repository = os.getenv("kartikkotak/LeetCodeProblems-Swift")  # owner/repo
     if github_repository:
         return f"https://github.com/{github_repository}"
 
@@ -39,8 +40,8 @@ def build_markdown_table(files, repo_url: str, branch: str = "main") -> str:
     Build markdown table with file name and GitHub link.
     """
     lines = []
-    lines.append("| File | Link |")
-    lines.append("|------|------|")
+    lines.append("| Solutions |")
+    lines.append("|------|")
 
     for file_path in files:
         file_name = file_path.name
@@ -51,7 +52,7 @@ def build_markdown_table(files, repo_url: str, branch: str = "main") -> str:
         else:
             link = str(file_path).replace("\\", "/")
 
-        lines.append(f"| `{file_name}` | {link} |")
+        lines.append(f"| [{file_name}]({link}) |")
 
     if not files:
         lines.append("| _No .swift files found_ | - |")
