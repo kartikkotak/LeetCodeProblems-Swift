@@ -1,0 +1,79 @@
+name: Update README with File Links
+
+on:
+  push:
+    branches:
+      - main # Change this if your default branch is 'master'
+    # Optional: Only run if files are added/changed in a specific folder
+    # paths:
+    #   - 'my_folder/**'
+
+# Grants the action permission to push commits back to the repo
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate Links and Update README
+        run: |
+          python -c "
+          import os, urllib.parse, re
+
+          # --- CONFIGURATION ---
+          # Change '.' to a specific folder name if you only want to scan one directory (e.g., 'scripts')
+          DIRECTORY = '.' 
+          README_PATH = 'README.md'
+          START_MARKER = ''
+          END_MARKER = ''
+
+          links = []
+          for root, dirs, files in sorted(os.walk(DIRECTORY)):
+              # Skip hidden directories like .git or .github
+              dirs[:] = [d for d in dirs if not d.startswith('.')]
+              
+              for file in sorted(files):
+                  # Skip the README itself and any hidden files
+                  if file.lower() == 'readme.md' or file.startswith('.'): 
+                      continue
+
+                  filepath = os.path.join(root, file)
+                  
+                  # Clean up the path format for the link
+                  display_path = filepath.replace(DIRECTORY + '/', '', 1) if DIRECTORY != '.' else filepath[2:]
+                  
+                  # URL encode the path to handle spaces and special characters
+                  url_path = urllib.parse.quote(display_path)
+                  
+                  # Format: - [filename.ext](path/to/filename.ext)
+                  links.append(f'- [{file}]({url_path})')
+
+          links_text = '\n'.join(links)
+          replacement = f'{START_MARKER}\n{links_text}\n{END_MARKER}'
+
+          # Read the current README
+          with open(README_PATH, 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # Replace the content between the markers
+          new_content = re.sub(f'{START_MARKER}.*?{END_MARKER}', replacement, content, flags=re.DOTALL)
+
+          # Write the updated content back
+          with open(README_PATH, 'w', encoding='utf-8') as f:
+              f.write(new_content)
+          "
+
+      - name: Commit and Push changes
+        run: |
+          # Set up git config for the bot
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          git add README.md
+          
+          # Only commit and push if there are actual changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: auto-update README with file links" && git push)
