@@ -6,8 +6,8 @@
 |------|
 | [1-TwoSum.swift](LeetCodeProblems/LeetCodeProblems/Solutions/1-TwoSum.swift) |
 | [1004-MaxConsecutiveOnes-3.swift](LeetCodeProblems/LeetCodeProblems/Solutions/1004-MaxConsecutiveOnes-3.swift) |
-| [167-TwoSumII - Input Array is Sorted.swift](LeetCodeProblems/LeetCodeProblems/Solutions/167-TwoSumII - Input Array is Sorted.swift) |
-| [170 - TwoSum-Design.swift](LeetCodeProblems/LeetCodeProblems/Solutions/170 - TwoSum-Design.swift) |
+| [167-TwoSumII.swift](LeetCodeProblems/LeetCodeProblems/Solutions/167-TwoSumII.swift) |
+| [170-TwoSum-Design.swift](LeetCodeProblems/LeetCodeProblems/Solutions/170-TwoSum-Design.swift) |
 | [2090-KRadiusSubarrayAverages.swift](LeetCodeProblems/LeetCodeProblems/Solutions/2090-KRadiusSubarrayAverages.swift) |
 | [2270-WaysToSplit.swift](LeetCodeProblems/LeetCodeProblems/Solutions/2270-WaysToSplit.swift) |
 | [288-UniqueWordAbbreviation.swift](LeetCodeProblems/LeetCodeProblems/Solutions/288-UniqueWordAbbreviation.swift) |
