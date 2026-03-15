@@ -1,12 +1,12 @@
-name: Update README with Swift Solutions
+name: Update README Solutions Table
 
 on:
   push:
-    branches:
-      - main # Change this if your default branch is 'master'
-    # This ensures the action only burns minutes when relevant files change
     paths:
-      - 'LeetCodeProblems/LeetCodeProblems/Solutions/**/*.swift'
+      - "Solutions/**/*.swift"
+      - "scripts/update_readme.py"
+      - "README.md"
+      - ".github/workflows/update-readme.yml"
 
 permissions:
   contents: write
@@ -14,63 +14,23 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate Links and Update README
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update README
+        run: python3 scripts/update_readme.py
+
+      - name: Commit changes
         run: |
-          python -c "
-          import os, urllib.parse, re
-
-          # --- CONFIGURATION ---
-          DIRECTORY = 'Solutions' 
-          README_PATH = 'README.md'
-          START_MARKER = ''
-          END_MARKER = ''
-
-          links = []
-          
-          # Ensure the directory exists to prevent script errors
-          if os.path.exists(DIRECTORY):
-              for root, dirs, files in sorted(os.walk(DIRECTORY)):
-                  # Skip hidden directories
-                  dirs[:] = [d for d in dirs if not d.startswith('.')]
-                  
-                  for file in sorted(files):
-                      # FILTER: Only process .swift files
-                      if not file.lower().endswith('.swift'): 
-                          continue
-
-                      filepath = os.path.join(root, file)
-                      
-                      # URL encode the path to handle spaces
-                      url_path = urllib.parse.quote(filepath)
-                      
-                      # Format: - [filename.swift](Solutions/filename.swift)
-                      links.append(f'- [{file}]({url_path})')
-
-          links_text = '\n'.join(links) if links else '- No Swift solutions found yet.'
-          replacement = f'{START_MARKER}\n{links_text}\n{END_MARKER}'
-
-          # Read the current README
-          with open(README_PATH, 'r', encoding='utf-8') as f:
-              content = f.read()
-
-          # Replace the content between the markers
-          new_content = re.sub(f'{START_MARKER}.*?{END_MARKER}', replacement, content, flags=re.DOTALL)
-
-          # Write the updated content back
-          with open(README_PATH, 'w', encoding='utf-8') as f:
-              f.write(new_content)
-          "
-
-      - name: Commit and Push changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
-          
-          # Only commit and push if there are actual changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: auto-update README with Swift solutions" && git push)
+          git diff --cached --quiet || git commit -m "Update README solutions table"
+          git push
