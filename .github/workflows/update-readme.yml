@@ -3,7 +3,7 @@ name: Update README Solutions Table
 on:
   push:
     paths:
-      - "Solutions/**/*.swift"
+      - "LeetCodeProblems/LeetCodeProblems/Solutions/**/*.swift"
       - "scripts/update_readme.py"
       - "README.md"
       - ".github/workflows/update-readme.yml"
