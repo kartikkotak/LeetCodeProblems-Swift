@@ -26,7 +26,7 @@ jobs:
 
           # --- CONFIGURATION ---
           # Change '.' to a specific folder name if you only want to scan one directory (e.g., 'scripts')
-          DIRECTORY = 'LeetCodeProblems/LeetCodeProblems/Solutions' 
+          DIRECTORY = 'LeetCodeProblems/LeetCodeProblems/Solutions/*' 
           README_PATH = 'README.md'
           START_MARKER = ''
           END_MARKER = ''
