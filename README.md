@@ -12,6 +12,7 @@
 | [2270-WaysToSplit.swift](LeetCodeProblems/LeetCodeProblems/Solutions/2270-WaysToSplit.swift) |
 | [288-UniqueWordAbbreviation.swift](LeetCodeProblems/LeetCodeProblems/Solutions/288-UniqueWordAbbreviation.swift) |
 | [5-LongestPalindromicString.swift](LeetCodeProblems/LeetCodeProblems/Solutions/5-LongestPalindromicString.swift) |
+| [56-MergeIntervals.swift](LeetCodeProblems/LeetCodeProblems/Solutions/56-MergeIntervals.swift) |
 | [643-MaxAverageSubArray1.swift](LeetCodeProblems/LeetCodeProblems/Solutions/643-MaxAverageSubArray1.swift) |
 | [658-KClosestValues.swift](LeetCodeProblems/LeetCodeProblems/Solutions/658-KClosestValues.swift) |
 | [977-SquaresOfSortedArray.swift](LeetCodeProblems/LeetCodeProblems/Solutions/977-SquaresOfSortedArray.swift) |
