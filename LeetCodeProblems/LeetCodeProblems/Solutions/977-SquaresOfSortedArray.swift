@@ -28,8 +28,8 @@ func sortedSquares(_ nums: [Int]) -> [Int] {
     
     // iterate through each val in result and update it by comparing square values at left and right.
     for i in stride(from: nums.count - 1, through: 0, by: -1) {
-        var rightNum = nums[right] * nums[right]
-        var leftNum = nums[left] * nums[left]
+        let rightNum = nums[right] * nums[right]
+        let leftNum = nums[left] * nums[left]
         
         // Compare left and right values and update index of result with the highest value.
         if rightNum > leftNum {
