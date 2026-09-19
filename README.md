@@ -15,8 +15,10 @@
 | [170-TwoSum-Design.swift](LeetCodeProblems/LeetCodeProblems/Solutions/170-TwoSum-Design.swift) |
 | [2090-KRadiusSubarrayAverages.swift](LeetCodeProblems/LeetCodeProblems/Solutions/2090-KRadiusSubarrayAverages.swift) |
 | [2270-WaysToSplit.swift](LeetCodeProblems/LeetCodeProblems/Solutions/2270-WaysToSplit.swift) |
+| [238-ProductArrayExceptSelf.swift](LeetCodeProblems/LeetCodeProblems/Solutions/238-ProductArrayExceptSelf.swift) |
 | [288-UniqueWordAbbreviation.swift](LeetCodeProblems/LeetCodeProblems/Solutions/288-UniqueWordAbbreviation.swift) |
 | [3-LongestUniqueSubstring.swift](LeetCodeProblems/LeetCodeProblems/Solutions/3-LongestUniqueSubstring.swift) |
+| [334-IncreasingTripletSubsequence.swift](LeetCodeProblems/LeetCodeProblems/Solutions/334-IncreasingTripletSubsequence.swift) |
 | [345-ReverseVowelsInString.swift](LeetCodeProblems/LeetCodeProblems/Solutions/345-ReverseVowelsInString.swift) |
 | [347-TopKFrequentElements.swift](LeetCodeProblems/LeetCodeProblems/Solutions/347-TopKFrequentElements.swift) |
 | [42-TrappingWater.swift](LeetCodeProblems/LeetCodeProblems/Solutions/42-TrappingWater.swift) |
