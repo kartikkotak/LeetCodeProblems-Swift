@@ -8,7 +8,7 @@
 | [100-SameTree.swift](LeetCodeProblems/LeetCodeProblems/Solutions/100-SameTree.swift) |
 | [1004-MaxConsecutiveOnes-3.swift](LeetCodeProblems/LeetCodeProblems/Solutions/1004-MaxConsecutiveOnes-3.swift) |
 | [1071-GCDofStrings.swift](LeetCodeProblems/LeetCodeProblems/Solutions/1071-GCDofStrings.swift) |
-| [152-Maximum Product Subarray.swift](LeetCodeProblems/LeetCodeProblems/Solutions/152-Maximum Product Subarray.swift) |
+| [152-MaxProductSubarray.swift](LeetCodeProblems/LeetCodeProblems/Solutions/152-MaxProductSubarray.swift) |
 | [167-TwoSumII.swift](LeetCodeProblems/LeetCodeProblems/Solutions/167-TwoSumII.swift) |
 | [17-LetterCombinations.swift](LeetCodeProblems/LeetCodeProblems/Solutions/17-LetterCombinations.swift) |
 | [170-TwoSum-Design.swift](LeetCodeProblems/LeetCodeProblems/Solutions/170-TwoSum-Design.swift) |
@@ -16,11 +16,13 @@
 | [2270-WaysToSplit.swift](LeetCodeProblems/LeetCodeProblems/Solutions/2270-WaysToSplit.swift) |
 | [288-UniqueWordAbbreviation.swift](LeetCodeProblems/LeetCodeProblems/Solutions/288-UniqueWordAbbreviation.swift) |
 | [3-LongestUniqueSubstring.swift](LeetCodeProblems/LeetCodeProblems/Solutions/3-LongestUniqueSubstring.swift) |
+| [345-ReverseVowelsInString.swift](LeetCodeProblems/LeetCodeProblems/Solutions/345-ReverseVowelsInString.swift) |
 | [347-TopKFrequentElements.swift](LeetCodeProblems/LeetCodeProblems/Solutions/347-TopKFrequentElements.swift) |
 | [42-TrappingWater.swift](LeetCodeProblems/LeetCodeProblems/Solutions/42-TrappingWater.swift) |
 | [49-GroupAnagrams.swift](LeetCodeProblems/LeetCodeProblems/Solutions/49-GroupAnagrams.swift) |
 | [5-LongestPalindromicString.swift](LeetCodeProblems/LeetCodeProblems/Solutions/5-LongestPalindromicString.swift) |
 | [56-MergeIntervals.swift](LeetCodeProblems/LeetCodeProblems/Solutions/56-MergeIntervals.swift) |
+| [605-CanPlaceFlowers.swift](LeetCodeProblems/LeetCodeProblems/Solutions/605-CanPlaceFlowers.swift) |
 | [621-TaskScheduler.swift](LeetCodeProblems/LeetCodeProblems/Solutions/621-TaskScheduler.swift) |
 | [643-MaxAverageSubArray1.swift](LeetCodeProblems/LeetCodeProblems/Solutions/643-MaxAverageSubArray1.swift) |
 | [658-KClosestValues.swift](LeetCodeProblems/LeetCodeProblems/Solutions/658-KClosestValues.swift) |
