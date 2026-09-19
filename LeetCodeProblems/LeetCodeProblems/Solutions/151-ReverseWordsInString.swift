@@ -15,26 +15,13 @@ func reverseWords(_ s: String) -> String {
     
     // Get list of words from the given String
     var words: [String] = s.split(separator: " ").map { String($0) }
+    var left = 0
+    var right = words.count - 1
     
-    var result: String = ""
-    while let word = words.popLast() {
-        if result.count > 0 {
-            result.append(" ")
-        }
-        result.append(contentsOf: word)
+    while left < right {
+        words.swapAt(left, right)
+        left += 1
+        right -= 1
     }
-    return result
-}
-
-private func reverseWord(_ s: String) -> String {
-    var l = 0
-    var r = s.count - 1
-    
-    var chars: [Character] = Array(s)
-    while l < r {
-        chars.swapAt(l, r)
-        l += 1
-        r -= 1
-    }
-    return String(chars)
+    return words.joined(separator: " ")
 }
