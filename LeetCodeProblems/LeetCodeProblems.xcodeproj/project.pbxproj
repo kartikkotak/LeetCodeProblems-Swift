@@ -24,6 +24,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A87FB822FB77EF800936724 /* NoOfIslands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOfIslands.swift; sourceTree = "<group>"; };
+		9A892A562FB6CC05002BD398 /* AccessibilityTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTree.swift; sourceTree = "<group>"; };
+		9A892A572FB6CE89002BD398 /* VoiceOverOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverOrder.swift; sourceTree = "<group>"; };
+		9A892A582FB6D42D002BD398 /* CloneGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneGraph.swift; sourceTree = "<group>"; };
 		9A8B1DD42F406A2D0032E0C6 /* LeetCodeProblems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCodeProblems.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8B1DE12F406A2D0032E0C6 /* LeetCodeProblemsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeProblemsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8B1DEB2F406A2D0032E0C6 /* LeetCodeProblemsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeProblemsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,9 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A892A552FB6CBE6002BD398 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				9A87FB822FB77EF800936724 /* NoOfIslands.swift */,
+				9A892A582FB6D42D002BD398 /* CloneGraph.swift */,
+				9A892A572FB6CE89002BD398 /* VoiceOverOrder.swift */,
+				9A892A562FB6CC05002BD398 /* AccessibilityTree.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
 		9A8B1DCB2F406A2D0032E0C6 = {
 			isa = PBXGroup;
 			children = (
+				9A892A552FB6CBE6002BD398 /* Practice */,
 				9A8B1DD62F406A2D0032E0C6 /* LeetCodeProblems */,
 				9A8B1DE42F406A2D0032E0C6 /* LeetCodeProblemsTests */,
 				9A8B1DD52F406A2D0032E0C6 /* Products */,
